@@ -2,7 +2,7 @@ FROM python:3.12-slim-bookworm
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PORT=8080
+    PORT=8000
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl nginx unzip \
@@ -24,5 +24,5 @@ COPY seed_public_demo.py /app/railway_seed_public_demo.py
 RUN chmod 755 /usr/local/bin/start-public.sh \
     && rm -f /etc/nginx/sites-enabled/default /etc/nginx/conf.d/default.conf
 
-EXPOSE 8080
+EXPOSE 8000
 CMD ["/usr/local/bin/start-public.sh"]
