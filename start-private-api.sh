@@ -28,7 +28,7 @@ if [ -z "${TEST_ADMIN_PASSWORD:-}" ]; then echo "TEST_ADMIN_PASSWORD is required
 
 alembic upgrade head
 
-printf '%s\n' "$TEST_ADMIN_PASSWORD" | python /app/bootstrap_admin.py --email "$TEST_ADMIN_EMAIL" --nom "$TEST_ADMIN_NOM" --prenom "$TEST_ADMIN_PRENOM" --clinic-id "$INSTANCE_CLINIC_ID" --password-stdin
+printf '%s\n' "$TEST_ADMIN_PASSWORD" | python /app/bootstrap_admin.py --email "$TEST_ADMIN_EMAIL" --nom "$TEST_ADMIN_NOM" --prenom "$TEST_ADMIN_PRENOM" --clinic-id "$INSTANCE_CLINIC_ID" --password-stdin --force
 
 exec uvicorn main:app --host 0.0.0.0 --port "$PORT"
 
