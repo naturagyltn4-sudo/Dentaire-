@@ -8,7 +8,7 @@ set -eu
 
 : "${INSTANCE_CLINIC_ID:=1}"
 
-: "${TEST_ADMIN_EMAIL:=demo-admin@dentaire.test}"
+: "${TEST_ADMIN_EMAIL:=demo-admin@dentaire-qa.fr}"
 
 : "${TEST_ADMIN_NOM:=Demo}"
 
